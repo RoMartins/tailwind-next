@@ -10,7 +10,7 @@ type InputControlProps = ComponentProps<'input'>
 export function InputControl(props: InputControlProps) {
   return (
     <input
-      className="flex-1    border-0 bg-transparent text-zinc-900 placeholder-zinc-600"
+      className="flex-1 border-0 bg-transparent text-zinc-900 placeholder-zinc-600"
       {...props}
     />
   )

@@ -1,3 +1,5 @@
+import { Mail } from 'lucide-react'
+import { InputControl, InputPrefix, InputRoot } from './components/Input'
 import { SettingTabs } from './components/SettingTabs'
 
 export default function Home() {
@@ -33,8 +35,58 @@ export default function Home() {
           </div>
         </div>
 
-        <form action="" className="mt-6 flex w-full flex-col">
-          form
+        <form
+          action=""
+          className="mt-6 flex w-full flex-col gap-5 divide-y divide-indigo-200"
+        >
+          <div className="grid-cols-form grid gap-3">
+            <label className="text-sm font-medium text-zinc-700">Name</label>
+            <div className="grid grid-cols-2 gap-6">
+              <InputRoot>
+                <InputControl defaultValue="Rodrigo" />
+              </InputRoot>
+
+              <InputRoot>
+                <InputControl defaultValue="Martins" />
+              </InputRoot>
+            </div>
+
+            <div />
+          </div>
+
+          <div className="grid-cols-form grid gap-3 pt-5">
+            <label
+              htmlFor="email"
+              className="text-sm font-medium text-zinc-700"
+            >
+              Email address
+            </label>
+            <div className="grid gap-6">
+              <InputRoot>
+                <InputPrefix>
+                  <Mail className="" />
+                </InputPrefix>
+                <InputControl type="email" defaultValue="Rodrigo@hotmail.com" />
+              </InputRoot>
+            </div>
+          </div>
+
+          <div className="grid-cols-form grid gap-3 pt-5">
+            <label>
+              Your photo address
+              <span className="mt-0.5 block text-sm font-normal text-zinc-700">
+                Yhis will be displayed on your profile
+              </span>
+            </label>
+            <div className="grid grid-cols-2 gap-6">
+              <InputRoot>
+                <InputPrefix>
+                  <Mail className="" />
+                </InputPrefix>
+                <InputControl type="email" defaultValue="Rodrigo@hotmail.com" />
+              </InputRoot>
+            </div>
+          </div>
         </form>
       </div>
     </>
