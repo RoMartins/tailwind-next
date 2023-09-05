@@ -1,5 +1,5 @@
 const num1 = 2
-const num2 = 10
+const num2 = 6
 let somaImpares = 0
 
 if (num1 > num2) {
