@@ -1,4 +1,4 @@
-import { Mail } from 'lucide-react'
+import { Mail, UploadCloud, User } from 'lucide-react'
 import { InputControl, InputPrefix, InputRoot } from './components/Input'
 import { SettingTabs } from './components/SettingTabs'
 
@@ -73,9 +73,83 @@ export default function Home() {
 
           <div className="grid-cols-form grid gap-3 pt-5">
             <label>
-              Your photo address
+              Your photo
               <span className="mt-0.5 block text-sm font-normal text-zinc-700">
                 Yhis will be displayed on your profile
+              </span>
+            </label>
+            <div className="flex items-start gap-2">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50">
+                <User className="h-8 w-8 text-violet-500" />
+              </div>
+
+              <label
+                htmlFor="photo"
+                className=" group flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300  px-6 py-4 text-center text-zinc-500 shadow-sm hover:border-violet-200 hover:bg-violet-50"
+              >
+                <div className="border-6 rounded-full border-zinc-100 bg-zinc-50 p-2 group-hover:bg-violet-100 group-hover:bg-violet-50">
+                  <UploadCloud className="h-5 w-5 text-zinc-600 group-hover:text-violet-600" />
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <span className="text-sm">
+                    <span className="font-semibold text-violet-700">
+                      Click to upload
+                    </span>{' '}
+                    or drag and drop
+                  </span>
+                  <span className="text-xs">
+                    SVG, PNG, JPG or GIF (max. 800x400px)
+                  </span>
+                </div>
+              </label>
+              <input type="file" className="sr-only" id="photo" />
+            </div>
+          </div>
+
+          <div className="grid-cols-form grid gap-3 pt-5">
+            <label>Role</label>
+            <div className="grid gap-6">
+              <InputRoot>
+                <InputControl type="" defaultValue="Product Designer" />
+              </InputRoot>
+            </div>
+          </div>
+
+          <div className="grid-cols-form grid gap-3 pt-5">
+            <label>Country</label>
+            <div className="grid grid-cols-2 gap-6">
+              <InputRoot>
+                <InputPrefix>
+                  <Mail className="" />
+                </InputPrefix>
+                <InputControl type="email" defaultValue="Rodrigo@hotmail.com" />
+              </InputRoot>
+            </div>
+          </div>
+
+          <div className="grid-cols-form grid gap-3 pt-5">
+            <label>timezone</label>
+            <div className="grid grid-cols-2 gap-6">
+              <InputRoot>
+                <InputPrefix>
+                  <Mail className="" />
+                </InputPrefix>
+                <InputControl type="email" defaultValue="Rodrigo@hotmail.com" />
+              </InputRoot>
+            </div>
+          </div>
+
+          <div className="grid-cols-form grid gap-3 pt-5">
+            <label>Bio</label>
+            <div className="grid grid-cols-2 gap-6"></div>
+          </div>
+
+          <div className="grid-cols-form grid gap-3 pt-5">
+            <label>
+              Portfolio Projects
+              <span className="mt-0.5 block text-sm font-normal text-zinc-700">
+                Share a few snippets of your work.
               </span>
             </label>
             <div className="grid grid-cols-2 gap-6">
