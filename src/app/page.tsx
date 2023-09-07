@@ -1,4 +1,4 @@
-import { Mail, UploadCloud, User } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import { InputControl, InputPrefix, InputRoot } from './components/Input'
 import { SettingTabs } from './components/SettingTabs'
 import * as FileInput from './components/Form/FileInput/Index'
@@ -79,7 +79,7 @@ export default function Home() {
                 Yhis will be displayed on your profile
               </span>
             </label>
-            <FileInput.Root className="flex items-start gap-2">
+            <FileInput.Root className="flex items-start gap-5">
               <FileInput.ImagePreview />
               <FileInput.Trigger />
               <FileInput.Control />
@@ -131,14 +131,10 @@ export default function Home() {
                 Share a few snippets of your work.
               </span>
             </label>
-            <div className="grid grid-cols-2 gap-6">
-              <InputRoot>
-                <InputPrefix>
-                  <Mail className="" />
-                </InputPrefix>
-                <InputControl type="email" defaultValue="Rodrigo@hotmail.com" />
-              </InputRoot>
-            </div>
+            <FileInput.Root className="flex items-start ">
+              <FileInput.Trigger />
+              <FileInput.Control multiple />
+            </FileInput.Root>
           </div>
         </form>
       </div>
