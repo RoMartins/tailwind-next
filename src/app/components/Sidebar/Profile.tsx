@@ -2,7 +2,7 @@ import { LogOut } from 'lucide-react'
 
 export function Profile() {
   return (
-    <div className="flex items-center gap-3">
+    <div className=" fixed bottom-0 left-0 flex w-80  items-center gap-3  border-r border-violet-600 bg-white p-2">
       <img
         src="https://github.com/RoMartins.png"
         className="h-10 w-10 rounded-full"

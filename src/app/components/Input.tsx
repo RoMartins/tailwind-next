@@ -21,7 +21,7 @@ export function InputRoot(props: InputRootProps) {
   return (
     <div
       {...props}
-      className="mx-1 flex w-full items-center gap-2 rounded-lg border border-zinc-300 px-2 py-2 shadow-sm"
+      className="flex w-full items-center gap-2 rounded-lg border border-zinc-300 px-2 py-2 shadow-sm"
     ></div>
   )
 }

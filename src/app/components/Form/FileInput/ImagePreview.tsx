@@ -4,19 +4,19 @@ import { useFileInputContext } from './Root'
 import { useMemo } from 'react'
 
 export function ImagePreview() {
-  const { file } = useFileInputContext()
+  const { files } = useFileInputContext()
 
   const previewUrl = useMemo(() => {
-    if (file.length === 0) {
+    if (files.length === 0) {
       return null
     }
 
-    return URL.createObjectURL(file[0])
-  }, [file])
+    return URL.createObjectURL(files[0])
+  }, [files])
 
   if (previewUrl === null) {
     return (
-      <div className="flex  items-center justify-center rounded-full bg-violet-50">
+      <div className="flex h-16 w-16  items-center justify-center rounded-full bg-violet-50">
         <User className="h-8 w-8 text-violet-500" />
       </div>
     )

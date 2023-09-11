@@ -2,6 +2,8 @@ import { Mail } from 'lucide-react'
 import { InputControl, InputPrefix, InputRoot } from './components/Input'
 import { SettingTabs } from './components/SettingTabs'
 import * as FileInput from './components/Form/FileInput/Index'
+import { Select } from './components/Form/Select'
+import { SelectItem } from './components/Form/Select/SelectItem'
 
 export default function Home() {
   return (
@@ -97,26 +99,21 @@ export default function Home() {
 
           <div className="grid grid-cols-form gap-3 pt-5">
             <label>Country</label>
-            <div className="grid grid-cols-2 gap-6">
-              <InputRoot>
-                <InputPrefix>
-                  <Mail className="" />
-                </InputPrefix>
-                <InputControl type="email" defaultValue="Rodrigo@hotmail.com" />
-              </InputRoot>
-            </div>
+            <Select placeholder="Select a country">
+              <SelectItem option="Brasil" value="br" />
+              <SelectItem option="United States" value="us" />
+            </Select>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
             <label>timezone</label>
-            <div className="grid grid-cols-2 gap-6">
-              <InputRoot>
-                <InputPrefix>
-                  <Mail className="" />
-                </InputPrefix>
-                <InputControl type="email" defaultValue="Rodrigo@hotmail.com" />
-              </InputRoot>
-            </div>
+            <Select>
+              <SelectItem
+                option="Pacific Standard Time (PST) UTC−08:00 "
+                value="br"
+              />
+              <SelectItem option="United States" value="us" />
+            </Select>
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
@@ -131,8 +128,9 @@ export default function Home() {
                 Share a few snippets of your work.
               </span>
             </label>
-            <FileInput.Root className="flex items-start ">
+            <FileInput.Root className="flex flex-col ">
               <FileInput.Trigger />
+              <FileInput.FileList />
               <FileInput.Control multiple />
             </FileInput.Root>
           </div>
