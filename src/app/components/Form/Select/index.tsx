@@ -1,23 +1,40 @@
 'use client'
 
 import * as SelectPrimitive from '@radix-ui/react-select'
-import { ChevronDown } from 'lucide-react'
-import { SelectItem } from './SelectItem'
+import { ChevronDown, Clock, MapPin } from 'lucide-react'
 import { ReactNode } from 'react'
 
-export interface SelectProps {
+export interface SelectProps extends SelectPrimitive.SelectProps {
   children: ReactNode
   placeholder: string
+  iconType?: 'location' | 'clock'
 }
 
-export function Select({ children, placeholder }: SelectProps) {
+export function Select({
+  children,
+  placeholder,
+  iconType,
+  ...props
+}: SelectProps) {
   return (
-    <SelectPrimitive.Root>
+    <SelectPrimitive.Root {...props}>
       <SelectPrimitive.Trigger className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-[placeholder]:text-zinc-600">
-        <SelectPrimitive.Value
-          placeholder={placeholder}
-          className="text-black"
-        />
+        <div className="flex items-center gap-2">
+          <SelectPrimitive.Icon>
+            {iconType === 'location' ? (
+              <MapPin className=" h-5 w-5 to-zinc-500" />
+            ) : iconType === 'clock' ? (
+              <Clock className=" h-5 w-5 to-zinc-500" />
+            ) : (
+              <div className="hidden" />
+            )}
+          </SelectPrimitive.Icon>
+
+          <SelectPrimitive.Value
+            placeholder={placeholder}
+            className="text-black"
+          />
+        </div>
         <SelectPrimitive.Icon>
           <ChevronDown className="h-5 w-5 to-zinc-500" />
         </SelectPrimitive.Icon>
