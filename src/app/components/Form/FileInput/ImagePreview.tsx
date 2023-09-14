@@ -2,9 +2,11 @@
 import { User } from 'lucide-react'
 import { useFileInputContext } from './Root'
 import { useMemo } from 'react'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 export function ImagePreview() {
   const { files } = useFileInputContext()
+  const [parent] = useAutoAnimate()
 
   const previewUrl = useMemo(() => {
     if (files.length === 0) {
@@ -24,6 +26,7 @@ export function ImagePreview() {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
+        ref={parent}
         src={previewUrl}
         alt=""
         className="h-16 w-16 rounded-full object-cover"

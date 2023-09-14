@@ -5,6 +5,7 @@ import * as FileInput from './components/Form/FileInput/Index'
 import { Select } from './components/Form/Select'
 import { SelectItem } from './components/Form/Select/SelectItem'
 import { Textarea } from './components/Form/textarea'
+import { Button } from './components/Button'
 
 export default function Home() {
   return (
@@ -30,12 +31,7 @@ export default function Home() {
             >
               Cancel
             </button>
-            <button
-              type="submit"
-              className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-800"
-            >
-              Save
-            </button>
+            <Button type="submit">Save</Button>
           </div>
         </div>
 
@@ -68,7 +64,7 @@ export default function Home() {
             <div className="grid gap-6">
               <InputRoot>
                 <InputPrefix>
-                  <Mail className="" />
+                  <Mail className="h-5 w-5 text-zinc-500" />
                 </InputPrefix>
                 <InputControl type="email" defaultValue="Rodrigo@hotmail.com" />
               </InputRoot>
