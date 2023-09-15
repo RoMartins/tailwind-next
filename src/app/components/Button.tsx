@@ -1,16 +1,28 @@
 import { ComponentProps } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
-export type ButtonProps = ComponentProps<'button'>
-
 const button = tv({
   base: [
     'rounded-lg shadow-sm outline-none px-4 py-2 text-sm font-semibold',
     'focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-violet-500',
     'active: opaciti-80',
   ],
+
+  variants: {
+    variant: {
+      primary: 'bg-violet-600 text-white hover:bg-violet-700',
+      outline: 'border border-zinc-300 text-zinc-700 hover:bg-zinc-50',
+      ghost: 'rounded-md px-2 hover:bg-zinc-50 shadow-none ',
+    },
+  },
+
+  defaultVariants: {
+    variant: 'primary',
+  },
 })
 
-export function Button(props: ButtonProps) {
-  return <button {...props} className={button()} />
+export type ButtonProps = ComponentProps<'button'> & VariantProps<typeof button>
+
+export function Button({ variant, className, ...props }: ButtonProps) {
+  return <button {...props} className={button({ variant, className })} />
 }
