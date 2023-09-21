@@ -5,12 +5,8 @@ import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { FileItem } from './FileItem'
 
 export function FileList() {
-  const { files, removeFile } = useFileInputContext()
+  const { files } = useFileInputContext()
   const [parent] = useAutoAnimate()
-
-  function handleRemoveFileItem(file: File) {
-    removeFile(file)
-  }
 
   return (
     <div ref={parent} className="mt-4 space-y-3 ">
@@ -21,7 +17,7 @@ export function FileList() {
             name={file.name}
             size={file.size}
             key={file.name}
-            state="error"
+            state="progress"
           />
         )
       })}
